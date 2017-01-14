@@ -28,6 +28,20 @@ func Round(f float64) float64 {
 	return math.Floor(f + .5)
 }
 
+// Requests total life expectancy from api.population.io
+// Expects date of birth and country
+// {
+//   "dob": "1989-11-29",
+//   "country": "Germany",
+//   "total_life_expectancy": 84.9352193923596,
+//   "sex": "male"
+// }
+func expectedAge(birthday time, country string) float64 {
+	// http://api.population.io:80/1.0/life-expectancy/total/male/Germany/1989-11-29/
+
+	return expectedAge
+}
+
 func getWeekCount(duration float64) int {
 
 	weeks := int(Round(duration / 24 / 7))
