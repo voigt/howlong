@@ -1,6 +1,7 @@
 package main
 
 import (
+	"flag"
 	"fmt"
 	"log"
 	"net/url"
@@ -17,12 +18,33 @@ type Me struct {
 	Diabetes   string  `json:"diabetes"`
 }
 
+var DOB string
+var SEX string
+var COUNTRY string
+var DIABETES string
+
+func init() {
+	// file := *flagParams{name: "f", description: "description"}
+
+	flag.StringVar(&DOB, "birthday", "", "Date of your birthday: YYYY-MM-DD")
+	flag.StringVar(&DOB, "b", "", "Date of your birthday: YYYY-MM-DD")
+	flag.StringVar(&SEX, "sex", "", "Your sex")
+	flag.StringVar(&SEX, "s", "", "Your sex")
+	flag.StringVar(&COUNTRY, "COUNTRY", "", "Country you are living")
+	flag.StringVar(&COUNTRY, "c", "", "Country you are living")
+	// flag.StringVar(&DIABETES, "diabetes", "", "Do you have diabetes (1 = yes or 0 no; default 0)")
+	// flag.StringVar(&DIABETES, "d", "", "Do you have diabetes (1 = yes or 0 no; default 0)")
+}
+
 func main() {
+	flag.Parse()
+
 	me := &Me{
-		Sex:     "male",
-		Country: "Germany",
-		Dob:     "1989-11-29",
+		Sex:     SEX,
+		Country: COUNTRY,
+		Dob:     DOB,
 	}
+
 	timeFormat := "2006-01-02 15:04 MST"
 	birthday := me.Dob + " 10:30 UTC"
 
