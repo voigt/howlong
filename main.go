@@ -21,7 +21,9 @@ type Me struct {
 var DOB string
 var SEX string
 var COUNTRY string
-var DIABETES string
+
+// var VISUALIZE bool
+// var DIABETES bool
 
 func init() {
 	// file := *flagParams{name: "f", description: "description"}
@@ -30,8 +32,10 @@ func init() {
 	flag.StringVar(&DOB, "b", "", "Date of your birthday: YYYY-MM-DD")
 	flag.StringVar(&SEX, "sex", "", "Your sex")
 	flag.StringVar(&SEX, "s", "", "Your sex")
-	flag.StringVar(&COUNTRY, "COUNTRY", "", "Country you are living")
+	flag.StringVar(&COUNTRY, "country", "", "Country you are living")
 	flag.StringVar(&COUNTRY, "c", "", "Country you are living")
+	// flag.StringVar(&VISUALIZE, "visualization", "", "Visualize life progress")
+	// flag.StringVar(&VISUALIZE, "v", "", "Visualize life progress")
 	// flag.StringVar(&DIABETES, "diabetes", "", "Do you have diabetes (1 = yes or 0 no; default 0)")
 	// flag.StringVar(&DIABETES, "d", "", "Do you have diabetes (1 = yes or 0 no; default 0)")
 }
@@ -60,7 +64,7 @@ func main() {
 	weeks := getWeekCount(duration)
 
 	printLife(weeks)
-	fmt.Printf("Your Birthday: %s\n", me.Dob)
+	fmt.Printf("Your day of birth: %s\n", me.Dob)
 	fmt.Printf("%d weeks have passed since then!\n", weeks)
 	fmt.Printf("You will probably live until you are %f years old.\n", me.Expectancy)
 
