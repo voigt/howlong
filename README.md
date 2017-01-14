@@ -1,4 +1,4 @@
-# howlong
+# howlong ![](https://travis-ci.org/voigt/howlong.svg?branch=master)
 
 
 ```
